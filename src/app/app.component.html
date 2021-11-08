@@ -1,0 +1,28 @@
+<h1>Convertor</h1>
+
+<nav>
+  <a (click)="toggleEditor('length')">Length</a>
+  <a (click)="toggleEditor('currency')">Currency </a>
+</nav>
+
+<div *ngIf="editor === 'length'">
+  <div *ngIf="lengthRate">
+    <app-convert-length [rates]="lengthRate.rates"></app-convert-length>
+  </div>
+</div>
+<div *ngIf="editor === 'currency'">
+  <div *ngIf="currencyRate">
+    date: {{ currencyRate.date }}
+    <app-convert-currency [rates]="currencyRate.rates"></app-convert-currency>
+    <!-- {{ currencyRate.date }}
+    <div *ngFor="let item of currencyRate.rates">
+      {{ item.name }}[{{ item.rate }}]
+      <example-app [rate]="item.rate"></example-app>
+    </div> -->
+  </div>
+
+  <!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+--></div>
