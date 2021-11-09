@@ -78,16 +78,21 @@ export class CurrencyService {
     return this.http.get<CurrencyResult>(rateUrl).pipe(
       map((data) => {
         const { last_updated, base, exchange_rates } = data;
-        exchange_rates[base] = 1;
+        // exchange_rates[base] = 1;
         console.log(last_updated, exchange_rates);
 
-        return {
+        let ret = {
           date: new Date(last_updated * 1000).toDateString(),
-          rates: Object.keys(exchange_rates).map((x) => ({
-            name: x,
-            rate: exchange_rates[x],
-          })),
+          rates: [
+            { name: base, rate: 1 },
+            ...Object.keys(exchange_rates).map((x) => ({
+              name: x,
+              rate: exchange_rates[x],
+            })),
+          ],
         };
+
+        return ret;
       })
     );
   }

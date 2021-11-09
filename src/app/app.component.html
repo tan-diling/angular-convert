@@ -12,7 +12,7 @@
 </div>
 <div *ngIf="editor === 'currency'">
   <div *ngIf="currencyRate">
-    date: {{ currencyRate.date }}
+    Latest date: {{ currencyRate.date }}
     <app-convert-currency [rates]="currencyRate.rates"></app-convert-currency>
     <!-- {{ currencyRate.date }}
     <div *ngFor="let item of currencyRate.rates">
