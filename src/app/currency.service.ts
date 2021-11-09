@@ -77,7 +77,8 @@ export class CurrencyService {
     // };
     return this.http.get<CurrencyResult>(rateUrl).pipe(
       map((data) => {
-        const { last_updated, exchange_rates } = data;
+        const { last_updated, base, exchange_rates } = data;
+        exchange_rates[base] = 1;
         console.log(last_updated, exchange_rates);
 
         return {
