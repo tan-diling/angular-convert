@@ -32,7 +32,7 @@ import { FormBuilder, NgModel } from '@angular/forms';
   </div>
 </div>  
   `,
-  styles: ['.title {display:inline-block;width:180px};'],
+  styles: ['.title {display:inline-block;width:120px};'],
 })
 export class LengthConvertComponent implements OnInit, OnDestroy {
   @Input() rates: Array<{ name: string; rate: number; formater: string }> = [];

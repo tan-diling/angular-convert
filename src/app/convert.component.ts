@@ -20,7 +20,7 @@ import { FormBuilder, NgModel } from '@angular/forms';
   selector: 'app-convert-currency',
   template: `
   <div *ngFor="let item of rates; let i = index">
-  <div > <label style="width:100;" >{{ item.name }}：</label>
+  <div > <label class="title" >{{ item.name }}：</label>
     <input
       type="number"
       inputmode="numeric"
@@ -32,6 +32,7 @@ import { FormBuilder, NgModel } from '@angular/forms';
   </div>
 </div>  
   `,
+  styles: ['.title {display:inline-block;width:120px};'],
 })
 export class ConvertComponent implements OnInit, OnDestroy {
   @Input() rates: Array<{ name: string; rate: number }> = [];
