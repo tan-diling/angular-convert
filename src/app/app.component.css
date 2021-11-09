@@ -1,7 +1,19 @@
-nav a {
-  padding: 1rem;
+nav button + button {
+  margin-left: 15px;
 }
 
+.container {
+  text-align: center;
+}
+
+.component {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.time {
+  margin-bottom: 10px;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.

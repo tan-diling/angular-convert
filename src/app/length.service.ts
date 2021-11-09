@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map } from "rxjs/operators";
 
 const lengthRates: {
   exchange_rates: Record<string, number>;
@@ -27,7 +28,7 @@ const lengthRates: {
   providedIn: 'root',
 })
 export class LengthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRates() {
     return of(lengthRates).pipe(

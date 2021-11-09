@@ -1,28 +1,33 @@
-<h1>Converter</h1>
+<div fxLayout="column" fxLayoutAlign="center center" class="container">
+  <h1>Converter</h1>
 
-<nav>
-  <a (click)="toggleEditor('length')">Length</a>
-  <a (click)="toggleEditor('currency')">Currency </a>
-</nav>
+  <nav>
+    <button
+      mat-raised-button
+      [color]="editor === 'length' ? 'primary' : undefined"
+      (click)="toggleEditor('length')"
+    >
+      Length
+    </button>
+    <button
+      mat-raised-button
+      [color]="editor === 'currency' ? 'primary' : undefined"
+      (click)="toggleEditor('currency')"
+    >
+      Currency
+    </button>
+  </nav>
 
-<div *ngIf="editor === 'length'">
-  <div *ngIf="lengthRate">
-    <app-convert-length [rates]="lengthRate.rates"></app-convert-length>
+  <div class="component" *ngIf="editor === 'length'">
+    <div *ngIf="lengthRate">
+      <app-convert-length [rates]="lengthRate.rates"></app-convert-length>
+    </div>
+  </div>
+
+  <div class="component" *ngIf="editor === 'currency'">
+    <div *ngIf="currencyRate">
+      <div class="time">Latest date: {{ currencyRate.date }}</div>
+      <app-convert-currency [rates]="currencyRate.rates"></app-convert-currency>
+    </div>
   </div>
 </div>
-<div *ngIf="editor === 'currency'">
-  <div *ngIf="currencyRate">
-    Latest date: {{ currencyRate.date }}
-    <app-convert-currency [rates]="currencyRate.rates"></app-convert-currency>
-    <!-- {{ currencyRate.date }}
-    <div *ngFor="let item of currencyRate.rates">
-      {{ item.name }}[{{ item.rate }}]
-      <example-app [rate]="item.rate"></example-app>
-    </div> -->
-  </div>
-
-  <!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
---></div>

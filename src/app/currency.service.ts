@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from "rxjs/operators";
 
 const sampleResult = {
   base: 'USD',
@@ -62,7 +63,7 @@ type CurrencyResult = {
   providedIn: 'root',
 })
 export class CurrencyService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRates() {
     const rateUrl =

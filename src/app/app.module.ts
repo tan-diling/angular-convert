@@ -7,6 +7,10 @@ import { SimpleNgModelComp } from './example.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConvertComponent } from './convert.component';
 import { LengthConvertComponent } from './length.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [AppComponent, ConvertComponent, LengthConvertComponent, SimpleNgModelComp],
@@ -14,12 +18,16 @@ import { LengthConvertComponent } from './length.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatInputModule,
     // other imports ...
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
 /*
 Copyright Google LLC. All Rights Reserved.

@@ -1,0 +1,17 @@
+.convert-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.convert-label {
+  display: inline-block;
+  width: 6em;
+  text-align: right;
+}
+
+.convert-value {
+  flex: 1;
+}
