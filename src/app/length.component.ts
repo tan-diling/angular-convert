@@ -20,7 +20,7 @@ import { FormBuilder, NgModel } from '@angular/forms';
   selector: 'app-convert-length',
   template: `
   <div *ngFor="let item of rates; let i = index">
-  <div > <span >{{ item.name }}：</span>
+  <div > <span class="title">{{ item.name }}：</span>
     <input
       type="number"
       inputmode="numeric"
@@ -32,6 +32,7 @@ import { FormBuilder, NgModel } from '@angular/forms';
   </div>
 </div>  
   `,
+  styles: ['.title {display:inline-block;width:180px};'],
 })
 export class LengthConvertComponent implements OnInit, OnDestroy {
   @Input() rates: Array<{ name: string; rate: number; formater: string }> = [];
@@ -40,9 +41,7 @@ export class LengthConvertComponent implements OnInit, OnDestroy {
 
   constructor() {}
 
-  ngOnInit() {
-    this.rates;
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {}
 
@@ -53,15 +52,11 @@ export class LengthConvertComponent implements OnInit, OnDestroy {
 
   changeValue(ev: Event, rate: number) {
     if (ev.target instanceof HTMLInputElement) {
-      // ;
-
-      // if (val != NaN) {
       console.log(ev.target.value, rate);
       const numValue = Number(ev.target.value);
       if (numValue !== NaN) {
         this.baseValue = numValue / rate;
       }
-      // }
     }
   }
 
