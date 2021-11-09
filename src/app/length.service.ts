@@ -18,8 +18,8 @@ const lengthRates: {
   exchange_rates: {
     metre: 1,
     millimeter: 1000,
-    yard: 0.0010936,
-    inch: 0.0393701,
+    yard: 1.0936,
+    inch: 39.3701,
   },
 };
 
