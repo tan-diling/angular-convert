@@ -1,0 +1,65 @@
+<div class="result-wrapper">
+  {{ getFormatter(lastFrom, lastFromUnit) }} equals
+  <div class="result">
+    {{ getFormatter(toValue, lastToUnit) }}
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-form-field appearance="outline" class="col-1">
+    <mat-label>From:</mat-label>
+    <input matInput type="number" inputmode="numeric" [(ngModel)]="fromValue" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="unit col-1">
+    <mat-label>Unit</mat-label>
+    <mat-select [(value)]="fromUnit">
+      <mat-option *ngFor="let item of rates" [value]="item.name">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<button mat-button color="primary" (click)="handleSwap()">
+  <mat-icon>swap_vert</mat-icon>Swap
+</button>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <span>To: </span>
+  <!-- <mat-form-field appearance="outline">
+    <mat-label>To:</mat-label>
+    <input
+      matInput
+      type="number"
+      inputmode="numeric"
+      [(ngModel)]="toValue"
+      disabled
+    />
+  </mat-form-field> -->
+
+  <mat-form-field appearance="outline" class="unit col-1">
+    <mat-label>Unit</mat-label>
+    <mat-select [(value)]="toUnit">
+      <mat-option *ngFor="let item of rates" [value]="item.name">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="btn-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <button mat-raised-button color="primary" (click)="handleConvert()">
+    Convert
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu" style="margin-left: 10px">
+    History
+  </button>
+  <mat-menu #menu="matMenu">
+    <div mat-menu-item *ngFor="let item of history">
+      {{ getFormatter(item.from, item.fromUnit) }} =
+      {{ getFormatter(item.to, item.toUnit) }}
+    </div>
+  </mat-menu>
+</div>

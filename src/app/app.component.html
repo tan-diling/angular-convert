@@ -4,17 +4,18 @@
   <nav>
     <button
       mat-raised-button
-      [color]="editor === 'length' ? 'primary' : undefined"
-      (click)="toggleEditor('length')"
-    >
-      Length
-    </button>
-    <button
-      mat-raised-button
       [color]="editor === 'currency' ? 'primary' : undefined"
       (click)="toggleEditor('currency')"
     >
       Currency
+    </button>
+
+    <button
+      mat-raised-button
+      [color]="editor === 'length' ? 'primary' : undefined"
+      (click)="toggleEditor('length')"
+    >
+      Length
     </button>
   </nav>
 

@@ -15,3 +15,26 @@
 .convert-value {
   flex: 1;
 }
+
+.result-wrapper {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.result {
+  font-size: 2em;
+  margin-top: 8px;
+}
+
+.unit {
+  margin-left: 10px;
+}
+
+.btn-wrapper {
+  margin: 20px 0;
+}
+
+.col-1 {
+  flex: 1;
+  max-width: 200px;
+}

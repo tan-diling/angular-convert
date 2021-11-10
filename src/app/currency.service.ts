@@ -67,7 +67,7 @@ export class CurrencyService {
 
   getRates() {
     const rateUrl =
-      'https://exchange-rates.abstractapi.com/v1/live/?api_key=31e9cfc87bca451ca1b07e7de5c2b944&base=USD';
+      'https://exchange-rates.abstractapi.com/v1/live/?api_key=004cf30ef5ac42da8d750ae033a6b9a5&base=USD';
     // const rateUrl = 'http://api.currencylayer.com/live';
     // const rateUrlParam = {
     //   access_key: 'cb1eeec1e8fec1d1f25429c3dc9950ef',

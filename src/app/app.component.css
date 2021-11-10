@@ -4,6 +4,7 @@ nav button + button {
 
 .container {
   text-align: center;
+  padding: 40px 20px 20px;
 }
 
 .component {

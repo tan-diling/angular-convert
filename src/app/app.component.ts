@@ -22,23 +22,26 @@ export class AppComponent implements OnInit {
 
   lengthRate:
     | {
-        date: string;
-        rates: Array<{ name: string; rate: number; formater: string }>;
-      }
+      date: string;
+      rates: Array<{ name: string; rate: number; formater: string }>;
+    }
     | undefined;
 
   constructor(
     private currencyService: CurrencyService,
     private lengthService: LengthService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.currencyService.getRates().subscribe((data) => {
       this.currencyRate = data;
+      console.log('this.currencyRate', this.currencyRate);
+
     });
 
     this.lengthService.getRates().subscribe((data) => {
       this.lengthRate = data;
+      console.log('this.lengthRate', this.lengthRate);
     });
   }
 }
